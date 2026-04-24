@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Javascript</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Intro Javascript</h1>
+    <hr>
+    <!-- 3 maneras de trabajar en javascript -->
+    <!-- ! Agregar javascript dentro de la etiqueta (en línea) -->
+    <button onclick="console.log('Click')">Clickeame</button>
+    <!-- ! Agregar javascript dentro de la etiqueta (en línea) -->
+
+    <hr>
+
+    <!-- ! Agregar javascript dentro del documento html -->
+    <button onclick="saludar()">Saludar</button>
+
+
+    <script>
+
+        function saludar() {
+            console.log('¡Hola tarolas!')
+        }
+
+    </script>
+
+    <hr>
+
+    <button id="btn">Bienvenidos</button>
+
+
+    <!-- ! Agregar javascript como un archivo externo (vínculado al html) -->
+    <!-- ! Mejor forma de incorporar el script de javascript en el html (al final de la etiqueta body) -->
+    <script src="js/main.js"></script>
+</body>
+</html>
