@@ -31,3 +31,27 @@ Ctrl + C
 ```sh
 npm run dev
 ```
+
+# Cuando quiero trabajar con proyecto de Vite
+
+Nota: Tengo que ver si está la carpeta **node_modules**
+
+Si no está me va a arrojar un error cuando intente arrancar el servidor de desarrollo
+
+```sh
+npm run dev # y no tengo la carpeta node_modules
+```
+
+```sh
+'vite' is not recognized as an internal or external command,
+operable program or batch file.
+```
+
+```sh
+npm i ## npm install
+```
+
+```sh
+npm run dev
+```
+
