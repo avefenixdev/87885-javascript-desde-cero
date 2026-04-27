@@ -52,7 +52,8 @@ console.warn('// ! Tipos de datos objetos (arrays|objetos|funciones)')
 // Los elementos posicionados y tienen un orden
 //               0       1       2        3        4         5          6
 let colores = ['rojo', 'rosa', 'lila', 'indigo', 'azul', 'amarillo', 'magenta']
-
+//               1        2       3        4       5         6           7
+// 7-1=6
 console.warn('// ! Acceso a los elementos del array');
 
 console.log(colores[0]) // accedo al primer elemento
@@ -113,4 +114,104 @@ console.log(persona['edad'])
 console.log(persona['direccion'])
 
 // let key = 'apellido'
+// console.log(persona.key) // { nombre: }
 // console.log(persona[key])
+
+console.warn('// ! Reasignar un valor en una key del objeto')
+
+persona.nombre = 'Julia'
+console.log(persona)
+persona['nombre'] = 'Pedro'
+console.log(persona)
+
+console.warn('// ! Constructor de variable "const"')
+
+// * let que nos permite crear variables que pueden cambiar (mutar)
+
+let apellido = 'Principe'
+console.log(apellido)
+apellido = 'Lopez'
+console.log(apellido)
+
+// * const, es un constructor de varible inmutable. Construyo la variable, le tengo que asignar si o si un valor y se valo no va a poder cambiar
+
+const PI = 3.1415
+console.log(PI)
+// reasignación
+// PI = 22222 // ! No se puede cambiar el valor una vez inicializa la constante
+
+// ! NOTA: SIEMPRE VOY A CREAR CONSTANTES EN JAVASCRIPT SALVO LAS PRIMITIVAS QUE EN UN FUTURO PUEDAN CAMBIAR
+
+const producto = {
+  nombre: 'TV',
+  categoria: 'Electro',
+  precio: 2999.99,
+  stock: 10
+}
+
+console.log(producto)
+console.log(typeof producto) // object
+//producto = 'PC'
+console.log(producto) // object
+console.log(producto.nombre) // nombre = 'TV'
+
+/* let numero1 = 20
+let numero2 = 4
+
+numero2 = 2
+numero1 = 10 */
+
+producto.nombre = 'TV 8k'
+console.log(producto)
+
+console.warn('// Estructuras (integración)')
+
+const cafetera1 = {
+  nombre: 'Cafetera 1',
+  precio: 222.99,
+  imagenes: [
+    { id: 1, url: 'http://dominio.com/imagen-1-c1'},
+    { id: 2, url: 'http://dominio.com/imagen-2-c1'},
+    { id: 3, url: 'http://dominio.com/imagen-3-c1'},
+  ]
+}
+
+const cafetera2 = {
+  nombre: 'Cafetera 2',
+  precio: 333.87,
+  imagenes: [
+    { id: 1, url: 'http://dominio.com/imagen-1-c2'}, // 0
+    { id: 2, url: 'http://dominio.com/imagen-2-c2'}, // 1
+    { id: 3, url: 'http://dominio.com/imagen-3-c2'}, // 2
+  ]
+}
+
+const cafetera3 = {
+  nombre: 'Cafetera 4',
+  precio: 999.30,
+  imagenes: [
+    { id: 1, url: 'http://dominio.com/imagen-1-c3'},
+    { id: 2, url: 'http://dominio.com/imagen-2-c3'},
+    { id: 3, url: 'http://dominio.com/imagen-3-c3'},
+  ]
+}
+//                      0          1          2
+const cafeteras = [ cafetera1, cafetera2, cafetera3 ]
+console.log(cafeteras)
+
+console.log(cafeteras[1].imagenes[1].url)
+console.log(cafeteras[0].precio)
+console.log(cafeteras[2].imagenes[2].url)
+
+const array = [2, 3, 4, 5]
+const obj = {x: '1', y: '2'}
+
+console.log(array)
+console.log(obj)
+console.log(typeof array)
+console.log(typeof obj)
+
+console.log(Array.isArray(array)) // true
+console.log(Array.isArray(array) ? 'Es un array':'Es un objeto') // true
+console.log(Array.isArray(obj)) // false
+console.log(Array.isArray(obj) ? 'Es un array':'Es un objeto') // false
