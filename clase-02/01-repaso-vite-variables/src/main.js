@@ -42,3 +42,56 @@ console.log(typeof numero) // number
 console.log(typeof precio) // number
 console.log(typeof cumple) // boolean
 console.log(typeof noDefinida) // undefined
+
+// A los anteriores tipos de datos se los conocen como primitivos.
+// A continuación vamos a ver los tipos de dato objeto
+
+console.warn('// ! Tipos de datos objetos (arrays|objetos|funciones)')
+// Arreglo | Vector | Array
+// Es una estructura de datos indexada (Que tiene indices)
+// Los elementos posicionados y tienen un orden
+//               0       1       2        3        4         5          6
+let colores = ['rojo', 'rosa', 'lila', 'indigo', 'azul', 'amarillo', 'magenta']
+
+console.warn('// ! Acceso a los elementos del array');
+
+console.log(colores[0]) // accedo al primer elemento
+console.log(colores[4]) // accedo al color azul del arreglo
+console.log(colores[6]) // accedo al color magenta del arreglo
+
+console.warn('Muestro el arreglo completo')
+
+console.log(colores)
+
+console.warn('Muestro la cantidad de elementos del arreglo')
+
+console.log(colores.length)
+
+console.warn('Mostrar el último elemento del arreglo')
+
+console.log(colores[colores.length-1]) // Último elemento
+
+console.warn('Reasignación de valores')
+
+colores[0] = 'verde'
+colores[colores.length-1] = 'turquesa'
+console.log(colores)
+
+console.warn('// ! Tipo de dato objetos')
+/* 
+let nombre = 'Julieta'
+let apellido = 'Gomez'
+let altura = 1.7
+let edad = 22 */
+
+console.warn('// ! Tipo de dato objeto literal')
+
+let persona = {
+  nombre: 'Julieta',
+  apellido: 'Gomez',
+  altura: 1.7,
+  edad: 22,
+  direccion: 'Siempre viva 123',
+}
+
+console.log(persona)
