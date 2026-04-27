@@ -87,6 +87,8 @@ let edad = 22 */
 console.warn('// ! Tipo de dato objeto literal')
 
 let persona = {
+  /* keys: values */
+  /* clave: valores */
   nombre: 'Julieta',
   apellido: 'Gomez',
   altura: 1.7,
@@ -95,3 +97,20 @@ let persona = {
 }
 
 console.log(persona)
+
+console.warn('// ! Acceder a los valores por medio de las keys (Claves)')
+
+console.warn('// ! Notación punto (dot notation)')
+
+console.log(persona.nombre)
+console.log(persona.edad)
+console.log(persona.direccion)
+
+console.warn('// ! Notación corchete (bracket notation)')
+
+console.log(persona['nombre'])
+console.log(persona['edad'])
+console.log(persona['direccion'])
+
+// let key = 'apellido'
+// console.log(persona[key])
