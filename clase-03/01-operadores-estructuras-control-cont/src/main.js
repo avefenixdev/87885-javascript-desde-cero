@@ -130,6 +130,26 @@ if ( nota >= 9 ) {
     alert('Nota insuficiente')
 }
 
+console.warn('Operadores lógicos')
+// Se usan para combinar condicionales. Los principales son Y (AND) el O (OR) y NO (NOT)
+
+let edadCiudadano = 25
+let tieneLicencia = false
+
+// Y (AND) -> Ambas condiciones deben ser true 
+//                 true           &&      true       = true
+console.log((edadCiudadano >= 18) && (tieneLicencia)) // true
+
+// AND
+// true     true ---> true (Acordarse que tienen que ser ambas verdaderas para que el resutlado verdadero)
+// false    true
+// true     false
+// false    false
+
+
+
+
+
 // Shortcuts
 // Para modificar varias palabras con el mismo identificador
 // Selecciono una y luego hago
