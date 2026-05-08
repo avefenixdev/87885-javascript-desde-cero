@@ -1,7 +1,45 @@
-.texto-grande {
-    font-size: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
-.espaciodo-superior {
-    margin-top: 80px;
+.producto-card {
+    /*                   RRBBGG */
+    /*                   RBG */
+    background-color: #ffe6b7;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #FF6B35;
+    box-shadow: 0 4px 10px (0, 0, 0, 0.1);
+}
+/* https://docs.emmet.io/cheat-sheet/  */
+.nombre-producto {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.producto-categoria span {
+    font-weight: bold;
+}
+
+.producto-precio {
+    font-size: 20px;
+    color: #2e7d32;
+    margin: 10px 0;
+}
+
+.producto-stock {
+    margin: 8px 0;
+}
+
+.producto-status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
 }
