@@ -250,40 +250,46 @@ const start = () => {
 
   console.log(arrayProductos)
 
-  console.warn('--------------for')
-  for (let i = 0; i < arrayProductos.length; i++) {
-    console.log(i)
-    console.log(arrayProductos[i].nombre)
-  }
-  console.warn('--------------foreach')
-  arrayProductos.forEach((producto) => {
-    console.log(producto.nombre)
-  })
-  console.warn('--------------forof')
-
   let template = ''
+
+  const contentedorCards = document.querySelector('#contenedor-cards')
 
   for (const producto of arrayProductos) {
     // console.log(producto.nombre)
 
-    template += `<article class="producto-card">
-        <h2 class="nombre-producto">${producto.nombre}</h2>
-        <p class="produto-categoria">Categoría: <span>${producto.categoria}</span></p>
-        <p class="producto-precio">${producto.precio}</p>
-  
-        <p class="producto-stock">Stock disponible: ${producto.stock}</p>
-        <p class="producto-status">${producto.activo ? 'Activo' : 'Inactivo'}</p>
-    </article>`
-    //debugger
-    //console.log(template)
-  }
+    const articulo = document.createElement('article')
+    articulo.classList.add('producto-card')
+    const tituloProducto = document.createElement('h2')
+    tituloProducto.classList.add('nombre-producto')
+    tituloProducto.textContent = producto.nombre
+    const productoCategoria = document.createElement('p')
+    const productoCategoriaSpan = document.createElement('span')
+    productoCategoria.classList.add('producto-categoria')
+    productoCategoria.textContent = 'Categoría: '
+    productoCategoriaSpan.textContent = producto.categoria
+    productoCategoria.appendChild(productoCategoriaSpan)
+    const productoPrecio = document.createElement('p')
+    productoPrecio.classList.add('producto-precio')
+    productoPrecio.textContent = producto.precio
+    const productoStock = document.createElement('p')
+    productoStock.classList.add('producto-stock')
+    productoStock.textContent = `Stock disponible: ${producto.stock}`
+    const productoStatus = document.createElement('p')
+    productoStatus.classList.add('producto-status')
+    productoStatus.textContent = producto.activo ? 'Activo' : 'Inactivo'
 
-  //console.log(template)
- 
-  const contentedorCards = document.querySelector('#contenedor-cards')
-  console.log(contentedorCards)
+    
+    articulo.appendChild(tituloProducto)
+    articulo.appendChild(productoCategoria)
+    articulo.appendChild(productoPrecio)
+    articulo.appendChild(productoStock)
+    articulo.appendChild(productoStatus)
 
-  contentedorCards.innerHTML = template
+    //console.log(articulo)
+
+    contentedorCards.appendChild(articulo)
+    console.log(contentedorCards)
+  }  
 
 }
 
