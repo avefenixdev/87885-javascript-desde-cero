@@ -69,15 +69,15 @@ boton.onclick = function() {
 /* boton.addEventListener('tipo-evento', callback) */
 /* boton.addEventListener('tipo-evento', function() {}) */
 /* boton.addEventListener('tipo-evento', () => {}) */
-boton.addEventListener('click', function() {
+boton.addEventListener('click', function () {
   console.log('Me hicieron click 🌟')
 })
 
-boton.addEventListener('click', function() {
+boton.addEventListener('click', function () {
   console.log('Me hicieron click 🌟🌟🌟')
 })
 
-boton.addEventListener('click', function() {
+boton.addEventListener('click', function () {
   console.log('Me hicieron click 🌟🌟🌟🌟🌟')
 })
 
@@ -126,3 +126,68 @@ document.addEventListener('load', () => {
 // Katas y desafios de Javascript
 // https://www.codewars.com/collections/javascript-basics-2
 // https://exercism.org/tracks/javascript
+
+// ! Es recomendable que todo nuestro código javascript este dentro del evento DOMContentLoaded
+
+const start = () => {
+
+  const producto1 = {
+    nombre: 'PC',
+    categoria: 'Electro',
+    destacado: true,
+    stock: 20,
+    activo: true,
+    precio: 2240
+  }
+
+  const producto2 = {
+    nombre: 'Celular',
+    categoria: 'Electro',
+    destacado: true,
+    stock: 10,
+    activo: true,
+    precio: 555
+  }
+
+  const producto3 = {
+    nombre: 'Batidora',
+    categoria: 'Electro',
+    destacado: true,
+    stock: 10,
+    activo: true,
+    precio: 325
+  }
+
+  const producto4 = {
+    nombre: 'Auto',
+    categoria: 'Transporte',
+    destacado: true,
+    stock: 15,
+    activo: false,
+    precio: 16000
+  }
+//                           0           1          2         3
+  const arrayProductos = [producto1, producto2, producto3, producto4]
+
+  console.log(arrayProductos)
+
+  console.warn('--------------for')
+  for (let i = 0; i < arrayProductos.length; i++) {
+    console.log(i)
+    console.log(arrayProductos[i].nombre)
+  }
+  console.warn('--------------foreach')
+  arrayProductos.forEach((producto) => {
+    console.log(producto.nombre)
+  })
+  console.warn('--------------forof')
+  for (const producto of arrayProductos) {
+    console.log(producto.nombre)
+  }
+
+
+}
+// start -> callback -> una función pasada como argumento de otra.
+// start <---- referencias
+// start() <--- función ejecutada (referencia invocada/ejecutada)
+document.addEventListener('DOMContentLoaded', start)
