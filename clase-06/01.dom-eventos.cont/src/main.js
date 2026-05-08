@@ -250,9 +250,20 @@ const start = () => {
 
   console.log(arrayProductos)
 
-  let template = ''
-
   const contentedorCards = document.querySelector('#contenedor-cards')
+
+  function formateadorDePrecios(numero) {
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+
+    const formateador = new Intl.NumberFormat('es-AR', {
+      style: 'currency',
+      currency: 'ARS'
+    })
+
+    const precioFormateado = formateador.format(numero)
+    return precioFormateado
+
+  }
 
   for (const producto of arrayProductos) {
     // console.log(producto.nombre)
@@ -270,7 +281,7 @@ const start = () => {
     productoCategoria.appendChild(productoCategoriaSpan)
     const productoPrecio = document.createElement('p')
     productoPrecio.classList.add('producto-precio')
-    productoPrecio.textContent = producto.precio
+    productoPrecio.textContent = formateadorDePrecios(producto.precio)
     const productoStock = document.createElement('p')
     productoStock.classList.add('producto-stock')
     productoStock.textContent = `Stock disponible: ${producto.stock}`
@@ -278,7 +289,7 @@ const start = () => {
     productoStatus.classList.add('producto-status')
     productoStatus.textContent = producto.activo ? 'Activo' : 'Inactivo'
 
-    
+    /* armamos el articulo con todos sus hijos */
     articulo.appendChild(tituloProducto)
     articulo.appendChild(productoCategoria)
     articulo.appendChild(productoPrecio)
@@ -286,7 +297,7 @@ const start = () => {
     articulo.appendChild(productoStatus)
 
     //console.log(articulo)
-
+    // inyectamos el artículo completo dentro del contenedor de cards
     contentedorCards.appendChild(articulo)
     console.log(contentedorCards)
   }  
