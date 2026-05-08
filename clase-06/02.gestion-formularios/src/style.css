@@ -1,0 +1,14 @@
+form {
+    width: 500px;
+    border: 3px solid crimson;
+    padding: 20px;
+    background-color: rgb(255, 178, 193);
+}
+
+input {
+    width: 100%;
+}
+
+button {
+    margin-top: 10px;
+}

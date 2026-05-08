@@ -3,9 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funciones</title>
+    <title>Formularios</title>
   </head>
   <body>
+    <h1>Formularios</h1>
+
+    <form action="#" method="POST">
+
+      <div>
+        <label for="lbl-nombre">Nombre</label>
+        <input type="text" name="nombre" id="lbl-nombre">
+        <small id="error-nombre"></small>
+      </div>
+
+       <div>
+        <label for="lbl-apellido">Apellido</label>
+        <input type="text" name="apellido" id="lbl-apellido">
+      </div>
+
+      <button type="submit">Enviar</button>
+
+    </form>
 
     <script type="module" src="/src/main.js"></script>
   </body>
