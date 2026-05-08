@@ -5,6 +5,12 @@
     font-family: "Open Sans", sans-serif;
 }
 
+#contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .producto-card {
     /*                   RRBBGG */
     /*                   RBG */

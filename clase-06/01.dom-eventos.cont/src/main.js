@@ -129,6 +129,85 @@ document.addEventListener('load', () => {
 
 // ! Es recomendable que todo nuestro código javascript este dentro del evento DOMContentLoaded
 
+const startOld = () => {
+
+  const producto1 = {
+    nombre: 'PC',
+    categoria: 'Electro',
+    destacado: true,
+    stock: 20,
+    activo: true,
+    precio: 2240
+  }
+
+  const producto2 = {
+    nombre: 'Celular',
+    categoria: 'Electro',
+    destacado: true,
+    stock: 10,
+    activo: true,
+    precio: 555
+  }
+
+  const producto3 = {
+    nombre: 'Batidora',
+    categoria: 'Electro',
+    destacado: true,
+    stock: 10,
+    activo: true,
+    precio: 325
+  }
+
+  const producto4 = {
+    nombre: 'Auto',
+    categoria: 'Transporte',
+    destacado: true,
+    stock: 15,
+    activo: false,
+    precio: 16000
+  }
+//                           0           1          2         3
+  const arrayProductos = [producto1, producto2, producto3, producto4]
+
+  console.log(arrayProductos)
+
+  console.warn('--------------for')
+  for (let i = 0; i < arrayProductos.length; i++) {
+    console.log(i)
+    console.log(arrayProductos[i].nombre)
+  }
+  console.warn('--------------foreach')
+  arrayProductos.forEach((producto) => {
+    console.log(producto.nombre)
+  })
+  console.warn('--------------forof')
+
+  let template = ''
+
+  for (const producto of arrayProductos) {
+    // console.log(producto.nombre)
+
+    template += `<article class="producto-card">
+        <h2 class="nombre-producto">${producto.nombre}</h2>
+        <p class="produto-categoria">Categoría: <span>${producto.categoria}</span></p>
+        <p class="producto-precio">${producto.precio}</p>
+  
+        <p class="producto-stock">Stock disponible: ${producto.stock}</p>
+        <p class="producto-status">${producto.activo ? 'Activo' : 'Inactivo'}</p>
+    </article>`
+    //debugger
+    //console.log(template)
+  }
+
+  //console.log(template)
+ 
+  const contentedorCards = document.querySelector('#contenedor-cards')
+  console.log(contentedorCards)
+
+  contentedorCards.innerHTML = template
+
+}
+
 const start = () => {
 
   const producto1 = {
@@ -181,12 +260,33 @@ const start = () => {
     console.log(producto.nombre)
   })
   console.warn('--------------forof')
+
+  let template = ''
+
   for (const producto of arrayProductos) {
-    console.log(producto.nombre)
+    // console.log(producto.nombre)
+
+    template += `<article class="producto-card">
+        <h2 class="nombre-producto">${producto.nombre}</h2>
+        <p class="produto-categoria">Categoría: <span>${producto.categoria}</span></p>
+        <p class="producto-precio">${producto.precio}</p>
+  
+        <p class="producto-stock">Stock disponible: ${producto.stock}</p>
+        <p class="producto-status">${producto.activo ? 'Activo' : 'Inactivo'}</p>
+    </article>`
+    //debugger
+    //console.log(template)
   }
 
+  //console.log(template)
+ 
+  const contentedorCards = document.querySelector('#contenedor-cards')
+  console.log(contentedorCards)
+
+  contentedorCards.innerHTML = template
 
 }
+
 // start -> callback -> una función pasada como argumento de otra.
 // start <---- referencias
 // start() <--- función ejecutada (referencia invocada/ejecutada)
